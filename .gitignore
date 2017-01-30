@@ -15,3 +15,11 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore node packages and related React stuff
+/node_modules
+/app/assets/javascripts/bundle.js
+/react/coverage
+
+# Ignore ENV file
+.env
