@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :pet do
-    sequence(:email, 100) { |n| "cooluser#{n}@bt.com" }
-    sequence(:username, 100) { |n| "cooluser#{n}" }
-    password "querty"
+    sequence(:name, 100) { |n| "pet#{n}" }
+
+    association :user, factory: :user
   end
 end
