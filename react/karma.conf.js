@@ -56,7 +56,7 @@ module.exports = function(config) {
 
       // relative path starts out at the src folder when importing modules
       resolve: {
-        root: path.resolve(__dirname, 'src'),
+        root: path.resolve(__dirname, 'src')
       }
     },
 

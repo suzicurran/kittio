@@ -23,3 +23,6 @@
 
 # Ignore ENV file
 .env
+
+# Ignore Coveralls reports
+/coverage
