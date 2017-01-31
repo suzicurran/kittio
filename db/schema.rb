@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130164037) do
+ActiveRecord::Schema.define(version: 20170131161518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "happinesses", force: :cascade do |t|
+    t.float    "value",      default: 3.0, null: false
+    t.integer  "pet_id",                   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["pet_id"], name: "index_happinesses_on_pet_id", using: :btree
+  end
+
+  create_table "hungers", force: :cascade do |t|
+    t.float    "value",      default: 5.0, null: false
+    t.integer  "pet_id",                   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["pet_id"], name: "index_hungers_on_pet_id", using: :btree
+  end
 
   create_table "pets", force: :cascade do |t|
     t.string   "name",                          null: false
