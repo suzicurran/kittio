@@ -12,7 +12,36 @@
   </head>
 
   <body>
+
+      <div class="top-bar">
+        <div class="top-bar-title">
+          Waddlr
+        </div>
+
+      <% if notice %>
+        <div class="callout small secondary">
+          <%= notice %>
+        </div>
+      <% end %>
+
+      <% if alert %>
+        <div class="callout small alert">
+          <%= alert %>
+        </div>
+      <% end %>
+
+    </div>
+
     <%= yield %>
 
+    <div class="row">
+      <div class="large-12 small-12 column text-center">
+        <% if user_signed_in? %>
+          Signed in as <b><%= current_user.username %></b>
+           |
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        <% end %>
+      </div>
+    </div>
   </body>
 </html>
