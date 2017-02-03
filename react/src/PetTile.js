@@ -26,7 +26,7 @@ const PetTile = props => {
               </div>
               <div className="large-4 small-12 column">
                 <div className="large-12 small-6 column">Age:</div>
-                <div className="large-12 small-6 column">{props.petAge} Days</div>
+                <div className="large-12 small-6 column">{props.petAge} day(s)</div>
               </div>
             </div>
             <div className="row">

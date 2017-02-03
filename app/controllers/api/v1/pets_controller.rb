@@ -6,7 +6,7 @@ class Api::V1::PetsController < ApplicationController
     hash = current_pet.as_json
     hash[:hunger] = current_pet.hunger.value
     hash[:happiness] = current_pet.happiness.value
-    hash[:age] = (Time.now.to_i - current_pet.created_at.to_i)/360
+    hash[:age] = (Time.now.to_i - current_pet.created_at.to_i)/86400
     render json: hash
   end
 
