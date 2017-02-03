@@ -1,13 +1,13 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import PetContainer from './PetContainer';
 
 $(function() {
-  if (document.getElementById('app')) {
+  if (document.getElementById('petApp')) {
     ReactDOM.render(
-      <App />,
-      document.getElementById('app')
+      <PetContainer />,
+      document.getElementById('petApp')
     );
   }
 });
