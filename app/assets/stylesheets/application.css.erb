@@ -1,0 +1,226 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+ body {
+   margin-bottom: 50px;
+   background-color: #E8B0A4;
+   background-image: url(<%= asset_path 'background.png' %>);
+   background-repeat: repeat;
+
+ }
+
+a {
+  color: #C05566;
+}
+
+a:hover {
+   color: #802F3D;
+}
+
+input[type=text] {
+  border: 5px solid white;
+  border-radius: 15px;
+  box-shadow:
+     inset 0 0 8px  rgba(0,0,0,0.1),
+           0 0 16px rgba(0,0,0,0.1);
+  padding: 25px;
+  background: rgba(255,255,255,0.9);
+  margin: 10px 0 10px 0;
+  color: #E5808E;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+input[type=text]:focus {
+  border: 5px solid #E5808E;
+}
+
+input[type=password] {
+  border: 5px solid white;
+  border-radius: 15px;
+  box-shadow:
+     inset 0 0 8px  rgba(0,0,0,0.1),
+           0 0 16px rgba(0,0,0,0.1);
+  padding: 25px;
+  background: rgba(255,255,255,0.9);
+  margin: 10px 0 10px 0;
+  color: #E5808E;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+input[type=password]:focus {
+  border: 5px solid #E5808E;
+}
+
+input[type=email] {
+  border: 5px solid white;
+  border-radius: 15px;
+  box-shadow:
+     inset 0 0 8px  rgba(0,0,0,0.1),
+           0 0 16px rgba(0,0,0,0.1);
+  padding: 25px;
+  background: rgba(255,255,255,0.9);
+  margin: 10px 0 10px 0;
+  color: #E5808E;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+input[type=email]:focus {
+  border: 5px solid #E5808E;
+}
+
+.main {
+  color: #4F2C0D;
+  font-size: 18px;
+  background-color: #FCF0E4;
+  border-radius: 15px;
+  border: solid #F4CEC2 4px;
+  padding: 20px;
+}
+
+.heading {
+  color: #4B2B15;
+  font-weight: bold;
+  background-image: linear-gradient(to bottom, #E8B0A4, #F4CEC2);
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom: solid #8E685C 4px;
+  border-left: solid #8E685C 4px;
+  border-right: solid #8E685C 4px;
+  padding: 20px;
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.input-box {
+  color: #4B2B15;
+  font-weight: bold;
+  background-image: linear-gradient(to bottom, rgba(232, 177, 165, 0.8), rgba(232, 177, 165, 0.4));
+  border: solid #E8B1A5 4px;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px;
+  display: inline-block;
+  box-shadow:
+     inset 0 0 8px  rgba(0,0,0,0.1),
+           0 0 16px rgba(0,0,0,0.1);
+}
+
+.value-box {
+  color: #4B2B15;
+  font-weight: bold;
+  background-image: linear-gradient(to bottom, rgba(255, 248, 241, 0.8), rgba(255, 255, 255, 0.8));
+  border: solid #FFF8F1 4px;
+  border-radius: 15px;
+  padding: 5px;
+  display: inline-block;
+  box-shadow:
+     inset 0 0 8px  rgba(0,0,0,0.1),
+           0 0 16px rgba(0,0,0,0.1);
+}
+
+.value-text {
+  color: #E5808E;
+  font-size: 22px;
+}
+
+.pet-name {
+  color: #E5808E;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.cuteButton {
+  font-family: 'Comfortaa', cursive;
+  font-weight: bold;
+  background: #e5808e;
+  background-image: linear-gradient(to bottom, #e5808e, #f4cec2);
+  border-radius: 15px;
+  box-shadow: 0px 1px 3px #666666;
+  color: #4F2C0D;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #e5808e 4px;
+  text-decoration: none;
+  margin: 5px 2px 5px 2px;
+}
+
+.cuteButton:hover {
+  background: #e5808e;
+  background-image: linear-gradient(to bottom, #e5808e, #FCF0E4);
+  text-decoration: none;
+}
+
+.pusheen-gif {
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-width: 200px;
+  min-height: 200px;
+  background-position: center;
+}
+
+.errors-without-bullets ul {
+  list-style: none;
+}
+
+#eat.pusheen-gif {
+  background-image: url(<%= asset_path 'pusheen_eat.gif' %>);
+}
+
+#happy.pusheen-gif {
+  background-image: url(<%= asset_path 'pusheen_happy.gif' %>);
+}
+
+#hi.pusheen-gif {
+  background-image: url(<%= asset_path 'pusheen_hi.gif' %>);
+}
+
+#hungry.pusheen-gif {
+  background-image: url(<%= asset_path 'pusheen_hungry.gif' %>);
+}
+
+#neutral.pusheen-gif {
+  background-image: url(<%= asset_path 'pusheen_neutral.gif' %>);
+}
+
+#sad.pusheen-gif {
+  background-image: url(<%= asset_path 'pusheen_sad.gif' %>);
+}
+
+#snuggle.pusheen-gif {
+  background-image: url(<%= asset_path 'pusheen_snuggle.gif' %>);
+}
+
+
+
+#hungerValue {
+   display: inline;
+}
+
+#happinessValue {
+   display: inline;
+}

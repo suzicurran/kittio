@@ -9,27 +9,33 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Open+Sans" rel="stylesheet">
   </head>
 
   <body>
-
-      <div class="top-bar">
-        <div class="top-bar-title">
-          Waddlr
+    <div class="row text-center">
+      <div class="large-2 small-1 column">&nbsp;</div>
+      <div class="large-8 small-10 column ">
+        <div class="heading text-center">
+          Purr.io
         </div>
+
+        <% if notice %>
+          <div class="callout small secondary">
+            <%= notice %>
+          </div>
+        <% end %>
+
+        <% if alert %>
+          <div class="callout small secondary">
+            <%= alert %>
+          </div>
+        <% end %>
       </div>
+      <div class="large-2 small-1 column">&nbsp;</div>
+    </div>
 
-      <% if notice %>
-        <div class="callout small secondary">
-          <%= notice %>
-        </div>
-      <% end %>
-
-      <% if alert %>
-        <div class="callout small alert">
-          <%= alert %>
-        </div>
-      <% end %>
 
     <%= yield %>
 
