@@ -1,6 +1,18 @@
 class Api::V1::PetsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  def create
+    new_pet = Pet.new
+    new_pet.name = params[:newPet][:name]
+    new_pet.user = current_user
+    new_pet.colorize
+    new_pet.add_attributes
+    new_pet.save
+    render status: 200, json: {
+      message: "pet saved",
+    }.to_json
+  end
+
   def show
     current_pet = Pet.find_by(user_id: params[:id])
     hash = current_pet.as_json

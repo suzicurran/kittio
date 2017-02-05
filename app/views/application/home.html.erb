@@ -1,5 +1,9 @@
 <% if user_signed_in? %>
-  <div id='petApp'></div>
+  <% if @user_pet %>
+    <div class="petApp" id=<%= @user_id %>>Game loading...</div>
+  <% else %>
+    <div class="newPet" id=<%= @user_id %>>Pet creation loading...</div>
+  <% end %>
 <% else %>
   <div class="row text-center">
     <%= link_to "Sign up", new_user_registration_path, :class => ''  %>

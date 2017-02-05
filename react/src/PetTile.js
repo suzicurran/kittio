@@ -1,8 +1,8 @@
 import React from 'react';
 
 const PetTile = props => {
-  let feedOnClick = () => props.feedOnClick(props.user_id);
-  let hugOnClick = () => props.hugOnClick(props.user_id);
+  let feedOnClick = () => props.feedOnClick();
+  let hugOnClick = () => props.hugOnClick();
 
   return(
     <div className="row">
