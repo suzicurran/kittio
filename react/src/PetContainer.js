@@ -8,7 +8,7 @@ class App extends Component {
       pigName: null,
       pigAge: null,
       pigHunger: null,
-      pigHappiness: null
+      pigHappiness: null,
     };
     this.fetchData = this.fetchData.bind(this);
     this.sendData = this.sendData.bind(this);
@@ -22,21 +22,19 @@ class App extends Component {
   }
 
   fetchData() {
-    fetch(`/api/v1/pets/1`)
+    fetch(`/api/v1/pets/${this.props.user_id}`)
     .then(response => response.json())
     .then((jsonresponse) => {
       this.setState({
         petName: jsonresponse.name,
         petHunger: jsonresponse.hunger,
         petHappiness: jsonresponse.happiness,
-        petAge: jsonresponse.age,
-        petId: jsonresponse.id,
-        userId: jsonresponse.user_id
+        petAge: jsonresponse.age
       });
     });
   }
 
-  feedPet(user_id) {
+  feedPet() {
     let data = {
       interaction: {
         hug: false,
@@ -44,10 +42,10 @@ class App extends Component {
       }
     };
 
-    this.sendData(data, user_id);
+    this.sendData(data);
   }
 
-  hugPet(user_id) {
+  hugPet() {
     let data = {
       interaction: {
         hug: true,
@@ -55,10 +53,10 @@ class App extends Component {
       }
     };
 
-    this.sendData(data, user_id);
+    this.sendData(data);
   }
 
-  sendData(data, user_id) {
+  sendData(data) {
     let target = null;
     if (data.interaction.hug)
       target = 'happiness';
@@ -67,7 +65,7 @@ class App extends Component {
     }
     let jsonStringData = JSON.stringify(data);
 
-    fetch(`/api/v1/pets/${user_id}`, {
+    fetch(`/api/v1/pets/${this.props.user_id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'same-origin',
@@ -89,7 +87,7 @@ class App extends Component {
       <PetTile
           key={this.state.petId}
           id={this.state.petId}
-          user_id="1"
+          user_id={this.props.user_id}
           petName={this.state.petName}
           petHunger={this.state.petHunger}
           petHappiness={this.state.petHappiness}

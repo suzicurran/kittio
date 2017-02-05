@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def home
+    @user_pet = false
+    @user_id = false
+    if user_signed_in?
+      @user_pet = Pet.find_by(user_id: current_user.id)
+      @user_id = current_user.id
+    end
   end
 
   protected

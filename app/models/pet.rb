@@ -10,4 +10,9 @@ class Pet < ApplicationRecord
     self.color = COLORS.sample
   end
 
+  def add_attributes
+    self.hunger = Hunger.new
+    self.happiness = Happiness.new
+  end
+
 end
