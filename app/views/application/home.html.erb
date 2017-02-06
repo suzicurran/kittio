@@ -1,13 +1,21 @@
-<% if user_signed_in? %>
-  <% if @user_pet %>
-    <div class="petApp" id=<%= @user_id %>>Game loading...</div>
+  <% if user_signed_in? %>
+    <% if @user_pet %>
+      <div class="petApp" id=<%= @user_id %>>Game loading...</div>
+    <% else %>
+      <div class="newPet" id=<%= @user_id %>>Pet creation loading...</div>
+    <% end %>
   <% else %>
-    <div class="newPet" id=<%= @user_id %>>Pet creation loading...</div>
+    <div class="row text-center">
+      <div class="large-3 small-2 column">&nbsp;</div>
+      <div class="large-6 small-8 column main">
+        <div class="row text-center">
+          <div id="party" class="pusheen-gif"></div>
+          <br />
+          <%= link_to "Sign up", new_user_registration_path, :class => ''  %>
+          or
+          <%= link_to "Login", new_user_session_path, :class => ''  %>
+        </div>
+      </div>
+      <div class="large-3 small-2 column">&nbsp;</div>
+    </div>
   <% end %>
-<% else %>
-  <div class="row text-center">
-    <%= link_to "Sign up", new_user_registration_path, :class => ''  %>
-    |
-    <%= link_to "Login", new_user_session_path, :class => ''  %>
-  </div>
-<% end %>

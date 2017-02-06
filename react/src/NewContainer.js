@@ -38,9 +38,28 @@ class App extends Component {
 
   render() {
     return(
-      <div>
-        <input className="nameInput" type="text" onChange={this.nameInput} />
-        <button type="button" onClick={this.createPet}>create pet</button>
+      <div className="row text-center">
+        <div className="large-3 small-2 column">&nbsp;</div>
+        <div className="large-6 small-8 column main">
+          <div className="row">
+            <div id="hi" className="pusheen-gif">
+            </div>
+          </div>
+          <div className="row">
+            <div className="large-1 small-1 column">&nbsp;</div>
+            <div className="large-10 small-10 column">
+              <div className="row input-box">
+                Give your new kitty a name:
+                <input className="nameInput" type="text" onChange={this.nameInput} />
+              </div>
+            </div>
+            <div className="large-1 small-1 column">&nbsp;</div>
+          </div>
+          <div className="row">
+            <button type="button" className="cuteButton" onClick={this.createPet}>Submit</button>
+          </div>
+        </div>
+        <div className="large-3 small-2 column">&nbsp;</div>
       </div>
     );
   }
