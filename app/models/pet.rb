@@ -15,4 +15,11 @@ class Pet < ApplicationRecord
     self.happiness = Happiness.new
   end
 
+  def decay_attributes
+    hunger.decay
+    hunger.save
+    happiness.decay
+    happiness.save
+  end
+
 end
