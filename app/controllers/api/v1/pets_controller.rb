@@ -5,7 +5,6 @@ class Api::V1::PetsController < ApplicationController
     new_pet = Pet.new
     new_pet.name = params[:newPet][:name]
     new_pet.user = current_user
-    new_pet.colorize
     new_pet.add_attributes
     new_pet.save
     render status: 200, json: {

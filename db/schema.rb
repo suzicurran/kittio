@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170131161518) do
   enable_extension "plpgsql"
 
   create_table "happinesses", force: :cascade do |t|
-    t.float    "value",      default: 3.0, null: false
+    t.float    "value",      default: 1.0, null: false
     t.integer  "pet_id",                   null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170131161518) do
   end
 
   create_table "hungers", force: :cascade do |t|
-    t.float    "value",      default: 5.0, null: false
+    t.float    "value",      default: 1.0, null: false
     t.integer  "pet_id",                   null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -32,11 +32,10 @@ ActiveRecord::Schema.define(version: 20170131161518) do
   end
 
   create_table "pets", force: :cascade do |t|
-    t.string   "name",                          null: false
-    t.string   "color",      default: "FFFFFF", null: false
-    t.integer  "user_id",                       null: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.string   "name",       null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_pets_on_user_id", using: :btree
   end
 
@@ -55,6 +54,7 @@ ActiveRecord::Schema.define(version: 20170131161518) do
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false
     t.string   "username",                               null: false
+    t.string   "zip_code",                               null: false
     t.string   "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
