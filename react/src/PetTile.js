@@ -13,14 +13,14 @@ const PetTile = props => {
         <div className="large-3 small-12 column">
           <div className="row pet-name">{props.petName}</div>
           <div className="row">
-            <div id="neutral" className="pusheen-gif"></div>
+            <div id={props.mood} className="pusheen-gif"></div>
           </div>
         </div>
         <div className="large-9 small-12 column">
           <div className="row">
             <div className="large-1 small-0 column">&nbsp;</div>
             <div className="large-3 small-12 column value-box">
-              <div className="large-12 small-6 column">Hunger:</div>
+              <div className="large-12 small-6 column">Noms:</div>
               <div className="large-12 small-6 column value-text"><div id="hungerValue">{props.petHunger}</div>/5</div>
             </div>
             <div className="large-1 small-0 column">&nbsp;</div>
@@ -36,10 +36,18 @@ const PetTile = props => {
           </div>
           <div className="row">
             <div className="large-12 small-0 column">&nbsp;</div>
+            <div className="large-1 small-0 column text-center"></div>
+            <div className="large-11 small-12 column value-box">
+              {props.quote}
+            </div>
           </div>
           <div className="row">
             <br />
-            <button type="button" className="cuteButton" onClick={feedOnClick}>feed me</button> <button type="button" className="cuteButton" onClick={hugOnClick}>hug me</button>
+            <div className="large-3 small-0 column">&nbsp;</div>
+            <div className="large-7 small-12 column">
+              <button type="button" className="cuteButton" onClick={feedOnClick}>feed me</button> <button type="button" className="cuteButton" onClick={hugOnClick}>hug me</button>
+            </div>
+            <div className="large-2 small-0 column">&nbsp;</div>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
   <div class="large-6 small-8 column main">
     <% x = devise_error_messages! %>
     <% unless x.empty? %>
-      <div class="callout small secondary">
+      <div class="callout small secondary errors-without-bullets">
         <%= devise_error_messages! %>
       </div>
     <% end %>
@@ -27,10 +27,6 @@
       <div class="field">
         <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
         <%= f.password_field :password, autocomplete: "off" %>
-        <% if @minimum_password_length %>
-          <br />
-          <em><%= @minimum_password_length %> characters minimum</em>
-        <% end %>
       </div>
 
       <div class="field">

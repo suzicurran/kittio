@@ -16,6 +16,8 @@ class Api::V1::PetsController < ApplicationController
   def show
     current_pet = Pet.find_by(user_id: params[:id])
     hash = current_pet.as_json
+    user = User.find_by(id: params[:id])
+    hash[:user_name] = user.username
     hash[:hunger] = current_pet.hunger.value
     hash[:happiness] = current_pet.happiness.value
     hash[:age] = (Time.now.to_i - current_pet.created_at.to_i)/86400
