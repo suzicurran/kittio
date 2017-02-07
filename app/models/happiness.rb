@@ -4,7 +4,7 @@ class Happiness < ApplicationRecord
 
   def decay
     if value.positive?
-      value = value - 1.0
+      self.value = self.value - 1.0
     end
   end
 end
