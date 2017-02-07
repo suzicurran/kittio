@@ -3,8 +3,8 @@ class Happiness < ApplicationRecord
   belongs_to :pet
 
   def decay
-    if self.value > 0
-      self.value = (self.value - 1.0)
+    if value.positive?
+      value = value - 1.0
     end
   end
 end
