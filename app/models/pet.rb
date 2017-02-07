@@ -16,10 +16,10 @@ class Pet < ApplicationRecord
   end
 
   def decay_attributes
-    self.hunger.decay
-    self.hunger.save
-    self.happiness.decay
-    self.happiness.save
+    hunger.decay
+    hunger.save
+    happiness.decay
+    happiness.save
   end
 
 end
