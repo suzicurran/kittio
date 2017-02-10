@@ -5,6 +5,8 @@ class Hunger < ApplicationRecord
   def decay
     if value.positive?
       self.value = self.value - 1.0
+    else
+      return true
     end
   end
 end

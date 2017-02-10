@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170131161518) do
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false
     t.string   "username",                               null: false
-    t.string   "zip_code",                               null: false
+    t.string   "twitter_handle"
     t.string   "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
