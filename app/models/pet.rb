@@ -10,10 +10,11 @@ class Pet < ApplicationRecord
   end
 
   def decay_attributes
-    hunger.decay
+    maxed_hunger = hunger.decay
     hunger.save
-    happiness.decay
+    maxed_unhappiness = happiness.decay
     happiness.save
+    return (maxed_unhappiness || maxed_hunger)
   end
 
 end
