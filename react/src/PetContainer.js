@@ -11,10 +11,12 @@ class App extends Component {
       petAge: null,
       petMood: "neutral",
       petQuote: "Meh.",
-      userName: "my owner"
+      userName: "my owner",
+      canUpdate: true
     };
     this.fetchData = this.fetchData.bind(this);
     this.sendData = this.sendData.bind(this);
+    this.permitUpdate = this.permitUpdate.bind(this);
     this.feedPet = this.feedPet.bind(this);
     this.hugPet = this.hugPet.bind(this);
     this.returnMood = this.returnMood.bind(this);
@@ -22,27 +24,41 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchData();
-    setInterval(this.fetchData, 4000);
+    setInterval(this.fetchData, 6000);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.canUpdate && prevState.canUpdate == false){
+      this.fetchData();
+    }
+  }
+
+  permitUpdate() {
+    this.setState({
+      canUpdate: true
+    });
   }
 
   fetchData() {
-    fetch(`/api/v1/pets/${this.props.user_id}`)
-    .then(response => response.json())
-    .then((jsonresponse) => {
-      let newHunger = jsonresponse.hunger;
-      let newHappiness = jsonresponse.happiness;
-      let newMood = this.returnMood(newHunger, newHappiness);
-      let newQuote = this.returnQuote(newMood);
-      this.setState({
-        petMood: newMood,
-        petName: jsonresponse.name,
-        userName: jsonresponse.user_name,
-        petHunger: newHunger,
-        petHappiness: newHappiness,
-        petAge: jsonresponse.age,
-        petQuote: newQuote
+    if (this.state.canUpdate) {
+      fetch(`/api/v1/pets/${this.props.user_id}`)
+      .then(response => response.json())
+      .then((jsonresponse) => {
+        let newHunger = jsonresponse.hunger;
+        let newHappiness = jsonresponse.happiness;
+        let newMood = this.returnMood(newHunger, newHappiness);
+        let newQuote = this.returnQuote(newMood);
+        this.setState({
+          petMood: newMood,
+          petName: jsonresponse.name,
+          userName: jsonresponse.user_name,
+          petHunger: newHunger,
+          petHappiness: newHappiness,
+          petAge: jsonresponse.age,
+          petQuote: newQuote
+        });
       });
-    });
+    }
   }
 
   feedPet() {
@@ -125,14 +141,18 @@ class App extends Component {
       if (parseInt(old_value) != 5) {
         $(`#${divTarget}`).text((parseInt(old_value) + 1));
         if (target == 'happiness') {
+          setTimeout(this.permitUpdate, 2000);
           this.setState({
             petMood: "snuggle",
-            petQuote: "I loooove hugs and snuggles!!"
+            petQuote: "I loooove hugs and snuggles!!",
+            canUpdate: false
           });
         } else if (target == 'hunger') {
+          setTimeout(this.permitUpdate, 2000);
           this.setState({
             petMood: "eat",
-            petQuote: "I looooove pizza!! Nom!!"
+            petQuote: "I looooove pizza!! Nom!!",
+            canUpdate: false
           });
         }
       }
@@ -140,7 +160,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.petMood);
     return(
       <PetTile
           key={this.props.user_id}
