@@ -37,6 +37,8 @@ npm install
 rake db:create && rake db:migrate && rake db:seed
 ```
 
+![App preview](https://github.com/suzicurran/kittio/app/assets/images/decay_attributes.png)
+
 If you want to take advantage of the decay_attributes rake task for changes over time,
 you'll need to add the following constants (from apps.twitter.com) to your .env file:
 ```
@@ -44,4 +46,9 @@ TWITTER_CONSUMER_KEY
 TWITTER_CONSUMER_SECRET
 TWITTER_ACCESS_TOKEN
 TWITTER_ACCESS_SECRET
+```
+
+It can then be run from the directory at-will:
+```
+rake decay_attributes
 ```
