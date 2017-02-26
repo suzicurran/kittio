@@ -4,7 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/suzicurran/breakable-toy/badges/gpa.svg)](https://codeclimate.com/github/suzicurran/breakable-toy)
 [![Coverage Status](https://codeclimate.com/github/suzicurran/breakable-toy/badges/coverage.svg)](https://codeclimate.com/github/suzicurran/breakable-toy/coverage)
 
-![App preview](https://github.com/suzicurran/kittio/app/assets/images/kittio_preview.png)
+![App preview](https://github.com/suzicurran/kittio/blob/master/app/assets/images/kittio_preview.png)
 
 ## [Live on Heroku!](http://kittio.herokuapp.com/)
 
