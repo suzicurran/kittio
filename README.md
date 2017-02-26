@@ -37,8 +37,6 @@ npm install
 rake db:create && rake db:migrate && rake db:seed
 ```
 
-![App preview](https://github.com/suzicurran/kittio/app/assets/images/decay_attributes.png)
-
 If you want to take advantage of the decay_attributes rake task for changes over time,
 you'll need to add the following constants (from apps.twitter.com) to your .env file:
 ```
@@ -52,3 +50,5 @@ It can then be run from the directory at-will:
 ```
 rake decay_attributes
 ```
+
+![Rake task preview](https://github.com/suzicurran/kittio/blob/master/app/assets/images/decay_attributes.png)
