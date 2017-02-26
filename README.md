@@ -1,10 +1,10 @@
-# KITT.IO
+# Kitt.io
 
 [ ![Codeship Status for suzicurran/breakable-toy](https://app.codeship.com/projects/b33838c0-ca26-0134-1460-327d40ee31ac/status?branch=master)](https://app.codeship.com/projects/199561)
 [![Code Climate](https://codeclimate.com/github/suzicurran/breakable-toy/badges/gpa.svg)](https://codeclimate.com/github/suzicurran/breakable-toy)
 [![Coverage Status](https://codeclimate.com/github/suzicurran/breakable-toy/badges/coverage.svg)](https://codeclimate.com/github/suzicurran/breakable-toy/coverage)
 
-![App preview](https://github.com/suzicurran/kittio/app/assets/images/kittio_preview.png)
+![App preview](https://github.com/suzicurran/kittio/blob/master/app/assets/images/kittio_preview.png)
 
 ## [Live on Heroku!](http://kittio.herokuapp.com/)
 
