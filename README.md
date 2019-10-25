@@ -6,7 +6,9 @@
 
 ![App preview](https://github.com/suzicurran/kittio/blob/master/app/assets/images/kittio_preview.png)
 
-## [Live on Heroku!](http://kittio.herokuapp.com/)
+
+
+# Note: this project is no longer under active maintenance and may have broken features or insecure dependencies. It exists only for reference purposes.
 
 ## Overview
 
